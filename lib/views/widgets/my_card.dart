@@ -14,40 +14,47 @@ class MyCard extends StatelessWidget {
       aspectRatio: 420 / 215,
       child: Container(
         decoration: ShapeDecoration(
-            image:
-                DecorationImage(image: AssetImage(Assets.imagesCardBackground)),
+            image: DecorationImage(
+                fit: BoxFit.fill,
+                image: AssetImage(Assets.imagesCardBackground)),
             color: Color(0xff4eb7f2),
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12))),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
+        child: Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
           ListTile(
-            contentPadding: EdgeInsets.only(left: 31, right:42, top: 16),
+            contentPadding: EdgeInsets.only(left: 31, right: 42, top: 16),
             title: Text(
               'Name Card',
-              style: AppStyles.styleRegular16.copyWith(color:Colors.white),
+              style: AppStyles.styleRegular16.copyWith(color: Colors.white),
             ),
             subtitle: Text(
               'Syah Bandi',
-              style: AppStyles.styleMedium20.copyWith(color:Colors.white),
+              style: AppStyles.styleMedium20.copyWith(color: Colors.white),
             ),
             trailing: SvgPicture.asset(Assets.imagesGallery),
           ),
-        // Expanded(child: const SizedBox()),
-        const Spacer(),
-       Padding(
-         padding: const EdgeInsets.only(right: 24),
-         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-             Text('0918 8124 0042 8129',
-          style: AppStyles.styleSeminBold24.copyWith(color: Colors.white),),
-          Text('12/20 - 124',style: AppStyles.styleRegular16.copyWith(color: Colors.white),),
-          ],
-         ),
-       ),
-        const SizedBox(height: 54 - 28,)
+          // Expanded(child: const SizedBox()),
+          const Spacer(),
+          Padding(
+            padding: const EdgeInsets.only(right: 24),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Text(
+                  '0918 8124 0042 8129',
+                  style:
+                      AppStyles.styleSeminBold24.copyWith(color: Colors.white),
+                ),
+                Text(
+                  '12/20 - 124',
+                  style: AppStyles.styleRegular16.copyWith(color: Colors.white),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(
+            height: 54 - 28,
+          )
         ]),
       ),
     );
