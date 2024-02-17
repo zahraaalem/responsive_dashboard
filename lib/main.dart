@@ -13,6 +13,7 @@ class ResponsiveDashboard
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      debugShowCheckedModeBanner: false,
       home:DashboardView()
     );
   }
