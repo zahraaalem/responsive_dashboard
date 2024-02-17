@@ -13,14 +13,14 @@ class AdaptiveLayout
   Widget build(BuildContext context) {
     return LayoutBuilder(
         builder: (context, Constraints) {
-          if(Constraints.maxWidth > 900){
-            return desktopLayout(context);
+          if(Constraints.maxWidth < 800){
+            return mobileLayout(context);
           }
-          else if(Constraints.maxWidth > 600){
+          else if(Constraints.maxWidth < 1300){
             return tabletLayout(context);
           }
           else{
-            return mobileLayout(context);
+            return desktopLayout(context);
           }
         }
       );
