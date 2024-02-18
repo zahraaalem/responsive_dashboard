@@ -17,9 +17,9 @@ class RangeOptions extends StatelessWidget {
               borderRadius: BorderRadius.circular(12))),
       child: Row(
         children: [
-          const Text(
+           Text(
             'Monthly',
-            style: AppStyles.styleMedium16,
+            style: AppStyles.styleMedium16(context),
           ),
           SizedBox(width: 18,),
           Transform.rotate(

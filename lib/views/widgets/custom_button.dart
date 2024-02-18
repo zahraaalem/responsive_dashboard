@@ -24,7 +24,7 @@ final Color? textColor;
           onPressed: () {},
           child: Text( text??
             'Send Money',
-            style: AppStyles.styleSeminBold18.copyWith(color: textColor ),
+            style: AppStyles.styleSemiBold18(context).copyWith(color: textColor ),
           )),
     );
   }

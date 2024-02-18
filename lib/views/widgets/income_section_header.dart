@@ -12,7 +12,7 @@ class IncomeSectionHeader extends StatelessWidget {
     return Row(
       children: [
         Text('Income',
-        style: AppStyles.styleSeminBold20,),
+        style: AppStyles.styleSemiBold20(context),),
         Spacer(),
         RangeOptions(),
       ]

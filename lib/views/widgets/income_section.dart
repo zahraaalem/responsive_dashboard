@@ -5,6 +5,7 @@ import 'package:responsive_dashboard/utils/app_styles.dart';
 import 'package:responsive_dashboard/views/widgets/custom_background_container.dart';
 import 'package:responsive_dashboard/views/widgets/income_chart.dart';
 import 'package:responsive_dashboard/views/widgets/income_details.dart';
+import 'package:responsive_dashboard/views/widgets/income_details_body.dart';
 import 'package:responsive_dashboard/views/widgets/income_section_header.dart';
 import 'package:responsive_dashboard/views/widgets/range_options.dart';
 
@@ -16,13 +17,9 @@ class IncomeSection extends StatelessWidget {
     return CustomBackgroundContainer(
         child: Column(children: [
       IncomeSectionHeader(),
-      Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Expanded(child: IncomeChart()),
-          Expanded(child: IncomeDetails())
-        ],
-      )
+      IncomeDetailsBody()
     ]));
   }
 }
+
+

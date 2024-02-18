@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:responsive_dashboard/utils/size_config.dart';
 import 'package:responsive_dashboard/views/widgets/adaptive_layout_widget.dart';
 import 'package:responsive_dashboard/views/widgets/custom_drawer.dart';
 import 'package:responsive_dashboard/views/widgets/dashboard_desktop_layout.dart';
@@ -20,9 +21,10 @@ final GlobalKey<ScaffoldState> globalKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
+    // SizeConfig.init(context); //-> usually in splash screen
     return Scaffold(
       key: globalKey,
-      appBar: MediaQuery.of(context).size.width < 800? AppBar(
+      appBar: MediaQuery.of(context).size.width < SizeConfig.tabletBreakPoint? AppBar(
         elevation: 0,
         backgroundColor: Color(0xfffafafa),
         leading: IconButton(
@@ -33,7 +35,7 @@ final GlobalKey<ScaffoldState> globalKey = GlobalKey();
           color: Colors.black,
           ))
       ) : null,
-      drawer:MediaQuery.of(context).size.width < 800? CustomDrawer(): null ,
+      drawer:MediaQuery.of(context).size.width < SizeConfig.tabletBreakPoint? CustomDrawer(): null ,
       backgroundColor: const Color(0xffF7F9FA),
       body: AdaptiveLayout(
         mobileLayout: (context) => const DashboardMobileLayout(),
